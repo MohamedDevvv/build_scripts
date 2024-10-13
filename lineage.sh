@@ -7,7 +7,7 @@ rm -rf .repo/local_manifests
 repo init --depth=1 --no-repo-verify -u https://github.com/Los-Ext/manifest.git -b lineage-21.0 --git-lfs -g default,-mips,-darwin,-notdefault
 
 # Clone local_manifests repository
-git clone https://github.com/MohamedDevvv/Build- --depth 1 -b ext .repo/local_manifests
+git clone https://github.com/MohamedDevvv/Build- --depth 1 -b ext .repo/Build-
 
 # Sync the repositories
 /opt/crave/resync.sh
