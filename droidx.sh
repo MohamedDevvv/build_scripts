@@ -1,5 +1,5 @@
 #!/bin/bash
-
+crave run "
 # Removals
 rm -rf .repo/local_manifests
 
@@ -26,4 +26,4 @@ export BUILD_HOSTNAME=crave
 source build/envsetup.sh
 lunch droidx_gale-ap2a-user
 make installclean
-mka bacon
+mka bacon"
