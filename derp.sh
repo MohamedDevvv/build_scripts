@@ -4,27 +4,26 @@
 rm -rf .repo/local_manifests
 
 # Initialize repo with specified manifest
-repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 14 --depth=1 --git-lfs
+repo init --depth=1 -u https://github.com/DroidX-UI/manifest.git -b 14_v3 --git-lfs --depth=1
 
 # Clone local_manifests repository
-git clone https://github.com/shravansayz/local_manifests --depth 1 -b derp14 .repo/local_manifests
+git clone https://github.com/MohamedDevvv/Build- --depth 1 -b main .repo/local_manifests
 
 # Sync the repositories
 /opt/crave/resync.sh
 
 #customs
 rm -rf frameworks/base
-git clone https://github.com/shravansayz/frameworks_base_derp.git -b 14 frameworks/base --depth=1
+git clone https://github.com/shravansayz/frameworks_base_droidx.git -b 14_v3 frameworks/base --depth=1
 
-#Private Keys
-rm -rf vendor/derp/signing
-git clone https://github.com/shravansayz/private_keys.git -b rise vendor/derp/signing
+rm -rf vendor/droidx-priv
+git clone https://github.com/shravansayz/private_keys.git -b droidx vendor/droidx-priv --depth=1
 
-export BUILD_USERNAME=shravan
+export BUILD_USERNAME=Mohamed
 export BUILD_HOSTNAME=crave
 
-# Set up build environment
+#build
 source build/envsetup.sh
-lunch derp_RMX1901-user
-make install clean
-mka derp
+lunch droidx_gale-ap2a-user
+make installclean
+mka bacon
