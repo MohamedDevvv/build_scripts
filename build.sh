@@ -4,17 +4,17 @@
 rm -rf .repo/local_manifests
 
 # Initialize repo with specified manifest
-repo init -u https://github.com/The-Pixel-Project/manifest -b fourteen-qpr3 -g default,-mips,-darwin,-notdefault --git-lfs
+repo init --depth=1 -u https://github.com/Project-Elixir/manifest -b UNO --git-lfs
 
 # Clone local_manifests repository
-git clone https://github.com/shravansayz/local_manifests --depth 1 -b tpp .repo/local_manifests
+git clone https://github.com/MohamedDevvv/Build- --depth 1 -b main .repo/local_manifests
 
 # Sync the repositories
 /opt/crave/resync.sh
 
 #customs
 rm -rf frameworks/base
-git clone https://github.com/shravansayz/frameworks_base_tpp.git -b fourteen-qpr3 frameworks/base --depth=1
+git clone https://github.com/Project-Elixir/frameworks_base -b UNO frameworks/base --depth=1
 
 rm -rf hardware/interfaces
 git clone https://github.com/shravansayz/hardware_interfaces.git -b fourteen-qpr3 hardware/interfaces --depth=1
