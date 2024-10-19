@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#SudoMohamed telegram
 # Removals
 rm -rf .repo/local_manifests
 
