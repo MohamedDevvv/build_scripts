@@ -20,7 +20,7 @@ rm -rf vendor/aosp
 git clone https://github.com/Project-Elixir/vendor_aosp.git -b UNO vendor/aosp --depth=1
 
 rm -rf packages/apps/Settings 
-git clone https://github.com/Project-Elixir/packages_apps_Settings.git -b UNO-QPR2 packages/apps/Settings 
+git clone https://github.com/Project-Elixir/packages_apps_Settings.git -b UNO-QPR2 packages/apps/Settings --depth=1
 
 export BUILD_USERNAME=Mohamed
 export BUILD_HOSTNAME=crave
