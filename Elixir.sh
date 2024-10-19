@@ -28,4 +28,4 @@ export BUILD_HOSTNAME=crave
 #build
 . build/envsetup.sh
 lunch aosp_gale-userdebug
-mka bacon -jX
+mka bacon 
