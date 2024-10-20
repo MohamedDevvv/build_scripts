@@ -27,6 +27,7 @@ export BUILD_USERNAME=Mohamed
 export BUILD_HOSTNAME=crave
 
 #build
-. build/envsetup.sh
-lunch aosp_gale-userdebug
-mka bacon 
+source build/envsetup.sh
+lunch lineage_gale-user
+m installclean
+m bacon
