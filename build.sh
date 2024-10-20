@@ -15,13 +15,13 @@ git clone https://github.com/MohamedDevvv/Build- --depth 1 -b main .repo/local_m
 
 #customs
 rm -rf frameworks/base
-git clone https://github.com/Project-Elixir/frameworks_base.git -b UNO frameworks/base --depth=1
+git clone https://github.com/MohamedDevvv/frameworks_base.git -b UNO frameworks/base --depth=1
 
 rm -rf vendor/aosp
-git clone https://github.com/Project-Elixir/vendor_aosp.git -b UNO vendor/aosp --depth=1
+git clone https://github.com/MohamedDevvv/vendor_aosp.git -b UNO vendor/aosp --depth=1
 
 rm -rf packages/apps/Settings 
-git clone https://github.com/Project-Elixir/packages_apps_Settings.git -b UNO-QPR2 packages/apps/Settings --depth=1
+git clone https://github.com/MohamedDevvv/packages_apps_Settings.git -b UNO-QPR2 packages/apps/Settings --depth=1
 
 export BUILD_USERNAME=Mohamed
 export BUILD_HOSTNAME=crave
