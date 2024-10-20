@@ -25,7 +25,7 @@ git clone https://github.com/Project-Elixir/packages_apps_Settings.git -b UNO-QP
 
 export BUILD_USERNAME=Mohamed
 export BUILD_HOSTNAME=crave
-
+#
 #build
 source build/envsetup.sh
 lunch aosp_gale-user
