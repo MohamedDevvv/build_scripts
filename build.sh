@@ -28,6 +28,6 @@ export BUILD_HOSTNAME=crave
 #
 #build
 source build/envsetup.sh
-lunch aosp_gale-user
+lunch aosp_gale-ap2a-userdebug
 m installclean
 m bacon
