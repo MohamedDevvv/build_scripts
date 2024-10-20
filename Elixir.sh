@@ -28,6 +28,6 @@ export BUILD_HOSTNAME=crave
 
 #build
 source build/envsetup.sh
-lunch lineage_gale-user
+lunch aosp_gale-user
 m installclean
 m bacon
