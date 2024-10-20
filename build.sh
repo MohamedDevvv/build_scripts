@@ -5,7 +5,7 @@
 rm -rf .repo/local_manifests
 
 # Initialize repo with specified manifest
-repo init --depth=1 -u https://github.com/Project-Elixir/manifest -b UNO --git-lfs
+repo init --depth=1 -u https://github.com/MohamedDevvv/manifest -b UNO --git-lfs
 
 # Clone local_manifests repository
 git clone https://github.com/MohamedDevvv/Build- --depth 1 -b main .repo/local_manifests
