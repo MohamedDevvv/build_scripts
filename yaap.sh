@@ -4,10 +4,12 @@
 rm -rf .repo/local_manifests
 
 # Initialize repo with specified manifest
-repo init -u https://github.com/yaap/manifest.git -b fifteen --git-lfs
+repo init -u https://github.com/yaap/manifest.git -b fourteen --git-lfs
 
 # Clone local_manifests repository
-git clone https://github.com/shravansayz/local_manifests.git --depth 1 -b yaap-test .repo/local_manifests
+git clone https://github.com/MohamedDevvv/Build-.git --depth 1 -b main .repo/local_manifests
+
+git clone https://github.com/yaap/frameworks_base/tree/fourteen.git --depth -b fourteen frameworks/base
 
 # Sync the repositories
 /opt/crave/resync.sh && /opt/crave/resync.sh
