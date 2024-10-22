@@ -1,30 +1,51 @@
 #!/bin/bash
 
-# Removals
-rm -rf .repo/local_manifests
+# Remove existing local_manifests
+rm -rf .repo/local_manifests/
 
-# Initialize repo with specified manifest
-repo init -u https://github.com/OrionOS-prjkt/android -b 14.0 --git-lfs
+# Initialize git lfs
+git lfs install
 
-# Clone local_manifests repository
-git clone https://github.com/MohamedDevvv/Build- --depth 1 -b main .repo/local_manifests
+# repo init manifest
+repo init -u https://github.com/OrionOS-prjkt/android -b 14.0 --git-lfs --depth=1
+echo "====================="
+echo "= Repo init success ="
+echo "====================="
 
-# Sync the repositories
-/opt/crave/resync.sh
+# Local manifests
+git clone https://github.com/MohamedDevvv/Build-.git -b main --depth=1 .repo/local_manifests
+echo "============================"
+echo "Local manifest clone success"
+echo "============================"
 
-#customs
-rm -rf frameworks/base
-git clone https://github.com/OrionOS-prjkt/android_frameworks_base.git -b 14.0 frameworks/base --depth=1
+# Sync
+/opt/crave/resync.sh || curl -s https://raw.githubusercontent.com/Trijal08/build_scripts/refs/heads/sync_script/resync.sh | bash
+echo "================"
+echo "= Sync success ="
+echo "================"
 
-#Private Keys
-rm -rf vendor/lineage-priv
-git clone https://github.com/shravansayz/private_keys.git -b rise vendor/lineage-priv
+# Auto-sign build
+rm -rf vendor/lineage-priv/keys
+wget https://raw.githubusercontent.com/Trijal08/crDroid-build-signed-script-auto/main/create-signed-env.sh
+chmod a+x create-signed-env.sh
+./create-signed-env.sh
 
-export BUILD_USERNAME=Mohamed
-export BUILD_HOSTNAME=crave
+# Export
+export BUILD_USERNAME="Mohamed"
+export BUILD_HOSTNAME="crave"
 export BUILD_BROKEN_MISSING_REQUIRED_MODULES=true
-#build
+echo "======= Export Done ======"
+
+# Set up build environment
 source build/envsetup.sh
-lunch orion_gale-ap2a-user
-m installclean
-mka space
+echo "====== Envsetup Done ======"
+
+breakfast gale user
+breakfast gale user
+make installclean -j$(nproc --all)
+echo "============="
+
+# Build ROM
+croot
+brunch gale user
+brunch gale user
