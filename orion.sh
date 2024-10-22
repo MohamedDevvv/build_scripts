@@ -41,11 +41,9 @@ source build/envsetup.sh
 echo "====== Envsetup Done ======"
 
 breakfast gale user
-breakfast gale user
 make installclean -j$(nproc --all)
 echo "============="
 
 # Build ROM
 croot
-brunch gale user
 brunch gale user
