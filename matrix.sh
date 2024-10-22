@@ -51,7 +51,7 @@ git clone https://github.com/MohamedDevvv/Build- --depth 1 -b main .repo/local_m
 
 #customs
 rm -rf frameworks/base
-git clone https://github.com/MohamedDevvv/android_frameworks_base_matrix.git -b 14.0 frameworks/base --depth=1
+git clone https://github.com/ProjectMatrixx/android_frameworks_base.git -b 14.0 frameworks/base --depth=1
 
 #Private Keys
 rm -rf vendor/lineage-priv
